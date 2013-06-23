@@ -18,6 +18,17 @@ sudoBlock('my-module');
 When the above file is ran with root permissions it will exit and show an error message telling the user how to fix the problem so they don't have to run it with `sudo`.
 
 
+## API
+
+### sudoBlock(options)
+
+Options is either a string specifying the *package name* or an object with these
+keys:
+
+- `packageName`: name of the package the error message is printed for
+- `message`: a custom error message
+
+
 ## License
 
 MIT License • © [Sindre Sorhus](http://sindresorhus.com)
