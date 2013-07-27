@@ -29,6 +29,11 @@ keys:
 - `message`: a custom error message
 
 
+### sudoBlock.isRoot
+
+Boolean indicating whether the current user is `root`.
+
+
 ## License
 
 MIT License • © [Sindre Sorhus](http://sindresorhus.com)

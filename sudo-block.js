@@ -5,12 +5,23 @@ function defaultMessage(packageName) {
 	return ('You are running ' + packageName.bold + ' with root permissions.').red;
 }
 
-module.exports = function (options) {
+function block(options) {
 	var packageName = typeof options === 'string' ? options : options.packageName;
 	var message = options.message;
+	console.error(message || defaultMessage(packageName));
+	process.exit(1);
+}
 
-	if (process.getuid && process.getuid() === 0) {
-		console.error(message || defaultMessage(packageName));
-		process.exit(1);
+function sudoBlock(options) {
+	if (sudoBlock.isRoot) {
+		block(options);
 	}
-};
+}
+
+Object.defineProperty(sudoBlock, 'isRoot', {
+	get: function () {
+		return process.getuid && process.getuid() === 0;
+	}
+});
+
+module.exports = sudoBlock;
