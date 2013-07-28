@@ -23,9 +23,13 @@ describe('sudo mode', function () {
 		assert(console.error.calledWithMatch(/You are running/));
 	});
 
-	it('accept custom messages', function () {
+	it('should accept custom messages', function () {
 		sudoBlock({ message: 'Thou shalt not sudo!' });
 		assert(console.error.calledWithMatch(/Thou shalt not sudo!/));
+	});
+
+	it('should have isRoot', function () {
+		assert(sudoBlock.isRoot);
 	});
 });
 
@@ -43,5 +47,9 @@ describe('user mode', function () {
 		sudoBlock('test');
 		assert(!process.exit.called);
 		assert(!console.error.called);
+	});
+
+	it('should have !isRoot', function () {
+		assert(!sudoBlock.isRoot);
 	});
 });
