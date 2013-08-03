@@ -2,7 +2,7 @@
 var chalk = require('chalk');
 
 function defaultMessage(packageName) {
-	return chalk.red('You are running ') + chalk.red.bold(packageName) + chalk.red(' with root permissions.');
+	return chalk.red('You are running ' + chalk.bold(packageName) + ' with root permissions.');
 }
 
 function block(options) {
