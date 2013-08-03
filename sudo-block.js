@@ -1,8 +1,8 @@
 'use strict';
-var colors = require('colors');
+var chalk = require('chalk');
 
 function defaultMessage(packageName) {
-	return ('You are running ' + packageName.bold + ' with root permissions.').red;
+	return chalk.red('You are running ') + chalk.red.bold(packageName) + chalk.red(' with root permissions.');
 }
 
 function block(options) {

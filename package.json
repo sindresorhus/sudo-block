@@ -27,10 +27,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "colors": "~0.6.0"
+    "chalk": "~0.1.1"
   },
   "devDependencies": {
-    "mocha": "~1.11.0",
+    "mocha": "~1.12.0",
     "sinon": "~1.7.3"
   },
   "engines": {
