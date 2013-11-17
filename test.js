@@ -15,16 +15,16 @@ describe('sudo mode', function () {
 	});
 
 	it('should prevent sudo', function () {
-		sudoBlock('test');
+		sudoBlock();
 		assert(process.exit.calledOnce);
-		assert(process.exit.calledWith(1));
+		assert(process.exit.calledWith(77));
 
 		assert(console.error.calledOnce);
-		assert(console.error.calledWithMatch(/You are running/));
+		assert(console.error.calledWithMatch(/You are not allowed/));
 	});
 
 	it('should accept custom messages', function () {
-		sudoBlock({ message: 'Thou shalt not sudo!' });
+		sudoBlock('Thou shalt not sudo!');
 		assert(console.error.calledWithMatch(/Thou shalt not sudo!/));
 	});
 
@@ -44,7 +44,7 @@ describe('user mode', function () {
 	});
 
 	it('should not prevent users', function () {
-		sudoBlock('test');
+		sudoBlock();
 		assert(!process.exit.called);
 		assert(!console.error.called);
 	});

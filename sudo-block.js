@@ -1,20 +1,12 @@
 'use strict';
 var chalk = require('chalk');
 
-function defaultMessage(packageName) {
-	return chalk.red('You are running ' + chalk.bold(packageName) + ' with root permissions.');
-}
+function sudoBlock(message) {
+	var defaultMessage = chalk.red.bold('You are not allowed to run this app with root permissions.') + '\nIf running without ' + chalk.bold('sudo') + ' doesn\'t work, you can either fix your permission problems or change where npm stores global packages by putting ' + chalk.bold('~/npm/bin') + ' in your PATH and running:\n' + chalk.blue('npm config set prefix ~/npm');
 
-function block(options) {
-	var packageName = typeof options === 'string' ? options : options.packageName;
-	var message = options.message;
-	console.error(message || defaultMessage(packageName));
-	process.exit(1);
-}
-
-function sudoBlock(options) {
 	if (sudoBlock.isRoot) {
-		block(options);
+		console.error(message || defaultMessage);
+		process.exit(77);
 	}
 }
 
