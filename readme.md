@@ -1,13 +1,15 @@
-# sudo-block [![Build Status](https://secure.travis-ci.org/sindresorhus/sudo-block.png?branch=master)](http://travis-ci.org/sindresorhus/sudo-block)
+# sudo-block [![Build Status](https://travis-ci.org/sindresorhus/sudo-block.png?branch=master)](https://travis-ci.org/sindresorhus/sudo-block)
 
-> Block users from running your app with root permissions.
+> Block users from running your app with root permissions
 
-![screenshot](screenshot.png)
+![](screenshot.png)
 
 
 ## Install
 
-Install with [npm](https://npmjs.org): `npm install --save sudo-block`
+```bash
+$ npm install --save sudo-block
+```
 
 
 ## Example
@@ -20,16 +22,17 @@ sudoBlock();
 
 ## API
 
-### sudoBlock(*message*)
+### sudoBlock(message)
 
-When a file containing this function is run with root permissions it will exit and show an error message telling the user how to fix the problem so they don't have to run it with `sudo`. Accepts a custom `message`.
+When a file containing this function is run with root permissions it will exit and show an error message telling the user how to fix the problem so they don't have to run it with `sudo`
 
+#### message
 
-### sudoBlock.isRoot
+Type: `String`
 
-Boolean indicating whether the current user is `root`.
+Accepts a custom message.
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)

@@ -1,8 +1,7 @@
-/*global describe, it, beforeEach */
 'use strict';
 var assert = require('assert');
 var sinon = require('sinon');
-var sudoBlock = require('./sudo-block');
+var sudoBlock = require('./index');
 
 describe('sudo mode', function () {
 	beforeEach(function () {
@@ -27,10 +26,6 @@ describe('sudo mode', function () {
 		sudoBlock('Thou shalt not sudo!');
 		assert(console.error.calledWithMatch(/Thou shalt not sudo!/));
 	});
-
-	it('should have isRoot', function () {
-		assert(sudoBlock.isRoot);
-	});
 });
 
 describe('user mode', function () {
@@ -47,9 +42,5 @@ describe('user mode', function () {
 		sudoBlock();
 		assert(!process.exit.called);
 		assert(!console.error.called);
-	});
-
-	it('should have !isRoot', function () {
-		assert(!sudoBlock.isRoot);
 	});
 });
