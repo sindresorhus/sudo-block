@@ -1,4 +1,4 @@
-# sudo-block [![Build Status](https://travis-ci.org/sindresorhus/sudo-block.png?branch=master)](https://travis-ci.org/sindresorhus/sudo-block)
+# sudo-block [![Build Status](https://travis-ci.org/sindresorhus/sudo-block.svg?branch=master)](https://travis-ci.org/sindresorhus/sudo-block)
 
 > Block users from running your app with root permissions
 
@@ -12,10 +12,11 @@ $ npm install --save sudo-block
 ```
 
 
-## Example
+## Usage
 
 ```js
 var sudoBlock = require('sudo-block');
+
 sudoBlock();
 ```
 
