@@ -1,7 +1,7 @@
 'use strict';
 var assert = require('assert');
 var sinon = require('sinon');
-var sudoBlock = require('./index');
+var sudoBlock = require('./');
 
 describe('sudo mode', function () {
 	beforeEach(function () {

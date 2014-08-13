@@ -7,7 +7,7 @@
 
 ## Install
 
-```bash
+```sh
 $ npm install --save sudo-block
 ```
 
@@ -29,11 +29,11 @@ When a file containing this function is run with root permissions it will exit a
 
 #### message
 
-Type: `String`
+Type: `string`
 
 Accepts a custom message.
 
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)

@@ -29,8 +29,8 @@
     "stop"
   ],
   "dependencies": {
-    "chalk": "^0.4.0",
-    "is-root": "^0.1.0"
+    "chalk": "^0.5.1",
+    "is-root": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "*",
