@@ -29,7 +29,7 @@
     "stop"
   ],
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "is-root": "^1.0.0"
   },
   "devDependencies": {
