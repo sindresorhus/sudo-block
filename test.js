@@ -1,7 +1,7 @@
 'use strict';
 var assert = require('assert');
-var sinon = require('sinon');
 var fs = require('fs');
+var sinon = require('sinon');
 var sudoBlock = require('./');
 
 describe('sudo mode', function () {

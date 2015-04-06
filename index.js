@@ -1,7 +1,7 @@
 'use strict';
+var fs = require('fs');
 var chalk = require('chalk');
 var isRoot = require('is-root');
-var fs = require('fs');
 
 function inDocker() {
 	try {
