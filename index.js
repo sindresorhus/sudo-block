@@ -7,7 +7,7 @@ function inDocker() {
 	try {
 		fs.statSync('/.dockerinit');
 		return true;
-	} catch (e) {
+	} catch (err) {
 		return false;
 	}
 }
