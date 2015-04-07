@@ -10,12 +10,15 @@ describe('sudo mode', function () {
 			return 0;
 		};
 
-		fs.statSync = function () {
-			throw new Error("ENOENT, no such file or directory '/.dockerinit'")
-		};
+		fs.statSync = sinon.stub(fs, 'statSync');
+		fs.statSync.withArgs('/.dockerinit').throws("ENOENT, no such file or directory '/.dockerinit'");
 
 		process.exit = sinon.spy();
 		console.error = sinon.spy();
+	});
+
+	afterEach(function () {
+		fs.statSync.restore();
 	});
 
 	it('should prevent sudo', function () {
@@ -39,12 +42,15 @@ describe('user mode', function () {
 			return 1000;
 		};
 
-		fs.statSync = function () {
-			throw new Error("ENOENT, no such file or directory '/.dockerinit'")
-		};
+		fs.statSync = sinon.stub(fs, 'statSync');
+		fs.statSync.withArgs('/.dockerinit').throws("ENOENT, no such file or directory '/.dockerinit'");
 
 		process.exit = sinon.spy();
 		console.error = sinon.spy();
+	});
+
+	afterEach(function () {
+		fs.statSync.restore();
 	});
 
 	it('should not prevent users', function () {
@@ -60,12 +66,15 @@ describe('docker mode', function () {
 			return 0;
 		};
 
-		fs.statSync = function () {
-			return {};
-		};
+		fs.statSync = sinon.stub(fs, 'statSync');
+		fs.statSync.withArgs('/.dockerinit').returns({});
 
 		process.exit = sinon.spy();
 		console.error = sinon.spy();
+	});
+
+	afterEach(function () {
+		fs.statSync.restore();
 	});
 
 	it('should not prevent users', function () {
