@@ -2,10 +2,15 @@
 var assert = require('assert');
 var fs = require('fs');
 var sinon = require('sinon');
-var sudoBlock = require('./');
+var clearRequire = require('clear-require');
 
 describe('sudo mode', function () {
+	var sudoBlock;
+
 	beforeEach(function () {
+		clearRequire.all();
+		sudoBlock = require('./');
+
 		process.getuid = function () {
 			return 0;
 		};
@@ -37,7 +42,12 @@ describe('sudo mode', function () {
 });
 
 describe('user mode', function () {
+	var sudoBlock;
+
 	beforeEach(function () {
+		clearRequire.all();
+		sudoBlock = require('./');
+
 		process.getuid = function () {
 			return 1000;
 		};
@@ -61,7 +71,12 @@ describe('user mode', function () {
 });
 
 describe('docker mode', function () {
+	var sudoBlock;
+
 	beforeEach(function () {
+		clearRequire.all();
+		sudoBlock = require('./');
+
 		process.getuid = function () {
 			return 0;
 		};

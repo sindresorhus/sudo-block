@@ -30,9 +30,11 @@
   ],
   "dependencies": {
     "chalk": "^1.0.0",
+    "is-docker": "^1.0.0",
     "is-root": "^1.0.0"
   },
   "devDependencies": {
+    "clear-require": "^1.0.1",
     "mocha": "*",
     "sinon": "^1.9.0"
   }
