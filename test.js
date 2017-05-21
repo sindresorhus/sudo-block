@@ -1,19 +1,18 @@
+/* eslint-env mocha */
 'use strict';
-var assert = require('assert');
-var fs = require('fs');
-var sinon = require('sinon');
-var clearRequire = require('clear-require');
+const assert = require('assert');
+const fs = require('fs');
+const sinon = require('sinon');
+const clearModule = require('clear-module');
 
-describe('sudo mode', function () {
-	var sudoBlock;
+describe('sudo mode', () => {
+	let sudoBlock;
 
-	beforeEach(function () {
-		clearRequire.all();
-		sudoBlock = require('./');
+	beforeEach(() => {
+		clearModule.all();
+		sudoBlock = require('.');
 
-		process.getuid = function () {
-			return 0;
-		};
+		process.getuid = () => 0;
 
 		fs.statSync = sinon.stub(fs, 'statSync');
 		fs.statSync.withArgs('/.dockerinit').throws('ENOENT, no such file or directory \'/.dockerinit\'');
@@ -22,11 +21,11 @@ describe('sudo mode', function () {
 		console.error = sinon.spy();
 	});
 
-	afterEach(function () {
+	afterEach(() => {
 		fs.statSync.restore();
 	});
 
-	it('should prevent sudo', function () {
+	it('should prevent sudo', () => {
 		sudoBlock();
 		assert(process.exit.calledOnce);
 		assert(process.exit.calledWith(77));
@@ -35,22 +34,20 @@ describe('sudo mode', function () {
 		assert(console.error.calledWithMatch(/You are not allowed/));
 	});
 
-	it('should accept custom messages', function () {
+	it('should accept custom messages', () => {
 		sudoBlock('Thou shalt not sudo!');
 		assert(console.error.calledWithMatch(/Thou shalt not sudo!/));
 	});
 });
 
-describe('user mode', function () {
-	var sudoBlock;
+describe('user mode', () => {
+	let sudoBlock;
 
-	beforeEach(function () {
-		clearRequire.all();
-		sudoBlock = require('./');
+	beforeEach(() => {
+		clearModule.all();
+		sudoBlock = require('.');
 
-		process.getuid = function () {
-			return 1000;
-		};
+		process.getuid = () => 1000;
 
 		fs.statSync = sinon.stub(fs, 'statSync');
 		fs.statSync.withArgs('/.dockerinit').throws('ENOENT, no such file or directory \'/.dockerinit\'');
@@ -59,27 +56,25 @@ describe('user mode', function () {
 		console.error = sinon.spy();
 	});
 
-	afterEach(function () {
+	afterEach(() => {
 		fs.statSync.restore();
 	});
 
-	it('should not prevent users', function () {
+	it('should not prevent users', () => {
 		sudoBlock();
 		assert(!process.exit.called);
 		assert(!console.error.called);
 	});
 });
 
-describe('docker mode', function () {
-	var sudoBlock;
+describe('docker mode', () => {
+	let sudoBlock;
 
-	beforeEach(function () {
-		clearRequire.all();
-		sudoBlock = require('./');
+	beforeEach(() => {
+		clearModule.all();
+		sudoBlock = require('.');
 
-		process.getuid = function () {
-			return 0;
-		};
+		process.getuid = () => 0;
 
 		fs.statSync = sinon.stub(fs, 'statSync');
 		fs.statSync.withArgs('/.dockerinit').returns({});
@@ -88,11 +83,11 @@ describe('docker mode', function () {
 		console.error = sinon.spy();
 	});
 
-	afterEach(function () {
+	afterEach(() => {
 		fs.statSync.restore();
 	});
 
-	it('should not prevent users', function () {
+	it('should not prevent users', () => {
 		sudoBlock();
 		assert(!process.exit.called);
 		assert(!console.error.called);

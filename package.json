@@ -7,13 +7,13 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "xo && mocha"
   },
   "files": [
     "index.js"
@@ -34,8 +34,9 @@
     "is-root": "^1.0.0"
   },
   "devDependencies": {
-    "clear-require": "^1.0.1",
-    "mocha": "*",
-    "sinon": "^1.9.0"
+    "clear-module": "^2.1.0",
+    "mocha": "^3.4.1",
+    "sinon": "^2.2.0",
+    "xo": "*"
   }
 }
