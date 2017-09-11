@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && mocha"
+    "test": "xo && ava"
   },
   "files": [
     "index.js"
@@ -34,8 +34,8 @@
     "is-root": "^1.0.0"
   },
   "devDependencies": {
-    "clear-module": "^2.1.0",
-    "mocha": "^3.4.1",
+    "ava": "*",
+    "import-fresh": "^2.0.0",
     "sinon": "^2.2.0",
     "xo": "*"
   }
