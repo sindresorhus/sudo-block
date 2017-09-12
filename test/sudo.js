@@ -17,7 +17,7 @@ test.after(() => {
 	console.error.restore();
 });
 
-test('should prevent sudo', t => {
+test('prevent sudo', t => {
 	importFresh('..')();
 	t.true(process.exit.calledOnce);
 	t.true(process.exit.calledWith(77));
@@ -25,7 +25,7 @@ test('should prevent sudo', t => {
 	t.true(console.error.calledWithMatch(/You are not allowed/));
 });
 
-test('should accept custom messages', t => {
+test('accept custom messages', t => {
 	importFresh('..')('Thou shalt not sudo!');
 	t.true(console.error.calledWithMatch(/Thou shalt not sudo!/));
 });

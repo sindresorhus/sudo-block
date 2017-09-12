@@ -17,7 +17,7 @@ test.after(() => {
 	console.error.restore();
 });
 
-test('should not prevent users', t => {
+test('doesn\'t prevent users', t => {
 	importFresh('..')();
 	t.false(process.exit.called);
 	t.false(console.error.called);

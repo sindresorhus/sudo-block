@@ -17,7 +17,7 @@ test.after(() => {
 	console.error.restore();
 });
 
-test('should not prevent docker users', t => {
+test('doesn\'t prevent docker users', t => {
 	importFresh('..')();
 	t.false(process.exit.called);
 	t.false(console.error.called);
