@@ -1,6 +1,6 @@
 {
 	"name": "sudo-block",
-	"version": "1.2.0",
+	"version": "2.0.0",
 	"description": "Block users from running your app with root permissions",
 	"license": "MIT",
 	"repository": "sindresorhus/sudo-block",
