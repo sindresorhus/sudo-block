@@ -8,7 +8,7 @@
 ## Install
 
 ```
-$ npm install --save sudo-block
+$ npm install sudo-block
 ```
 
 

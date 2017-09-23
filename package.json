@@ -1,42 +1,42 @@
 {
-  "name": "sudo-block",
-  "version": "1.2.0",
-  "description": "Block users from running your app with root permissions",
-  "license": "MIT",
-  "repository": "sindresorhus/sudo-block",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "sudo",
-    "root",
-    "user",
-    "permissions",
-    "uid",
-    "block",
-    "prevent",
-    "stop"
-  ],
-  "dependencies": {
-    "chalk": "^1.0.0",
-    "is-docker": "^1.0.0",
-    "is-root": "^1.0.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "import-fresh": "^2.0.0",
-    "sinon": "^2.2.0",
-    "xo": "*"
-  }
+	"name": "sudo-block",
+	"version": "1.2.0",
+	"description": "Block users from running your app with root permissions",
+	"license": "MIT",
+	"repository": "sindresorhus/sudo-block",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=4"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"sudo",
+		"root",
+		"user",
+		"permissions",
+		"uid",
+		"block",
+		"prevent",
+		"stop"
+	],
+	"dependencies": {
+		"chalk": "^2.1.0",
+		"is-docker": "^1.0.0",
+		"is-root": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"import-fresh": "^2.0.0",
+		"sinon": "^3.3.0",
+		"xo": "*"
+	}
 }
