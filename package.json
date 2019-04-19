@@ -10,13 +10,14 @@
 		"url": "sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=4"
+		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && ava"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"index.d.ts"
 	],
 	"keywords": [
 		"sudo",
@@ -29,14 +30,15 @@
 		"stop"
 	],
 	"dependencies": {
-		"chalk": "^2.1.0",
-		"is-docker": "^1.0.0",
-		"is-root": "^1.0.0"
+		"chalk": "^2.4.2",
+		"is-docker": "^2.0.0",
+		"is-root": "^2.1.0"
 	},
 	"devDependencies": {
-		"ava": "*",
-		"import-fresh": "^2.0.0",
-		"sinon": "^3.3.0",
-		"xo": "*"
+		"ava": "^1.4.1",
+		"import-fresh": "^3.0.0",
+		"sinon": "^7.3.2",
+		"tsd": "^0.7.2",
+		"xo": "^0.24.0"
 	}
 }
