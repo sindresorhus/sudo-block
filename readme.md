@@ -1,4 +1,4 @@
-# sudo-block [![Build Status](https://travis-ci.org/sindresorhus/sudo-block.svg?branch=master)](https://travis-ci.org/sindresorhus/sudo-block)
+# sudo-block
 
 > Block users from running your app with root permissions
 
