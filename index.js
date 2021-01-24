@@ -9,7 +9,7 @@ module.exports = message => {
 If running without {bold sudo} doesn't work, you can either fix your permission problems or change where npm stores global packages by putting {bold ~/npm/bin} in your PATH and running:
 {blue npm config set prefix ~/npm}
 
-See: {underline https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md}`;
+See: {underline https://github.com/sindresorhus/guides/blob/main/npm-global-without-sudo.md}`;
 
 	if (isRoot() && !isDocker()) {
 		console.error(message || defaultMessage);
