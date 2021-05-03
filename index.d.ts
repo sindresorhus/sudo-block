@@ -5,11 +5,9 @@ Block users from running your app with root permissions. When a file containing 
 
 @example
 ```
-import sudoBlock = require('sudo-block');
+import sudoBlock from 'sudo-block';
 
 sudoBlock();
 ```
 */
-declare function sudoBlock(message?: string): void;
-
-export = sudoBlock;
+export default function sudoBlock(message?: string): void;

@@ -17,8 +17,8 @@ test.after(() => {
 	console.error.restore();
 });
 
-test('doesn\'t prevent users', t => {
-	importFresh('..')();
+test('doesn not prevent users', t => {
+	importFresh('../index.js')();
 	t.false(process.exit.called);
 	t.false(console.error.called);
 });

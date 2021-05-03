@@ -18,7 +18,7 @@ test.after(() => {
 });
 
 test('prevent sudo', t => {
-	importFresh('..')();
+	importFresh('../index.js')();
 	t.true(process.exit.calledOnce);
 	t.true(process.exit.calledWith(77));
 	t.true(console.error.calledOnce);
@@ -26,6 +26,6 @@ test('prevent sudo', t => {
 });
 
 test('accept custom messages', t => {
-	importFresh('..')('Thou shalt not sudo!');
+	importFresh('../index.js')('Thou shalt not sudo!');
 	t.true(console.error.calledWithMatch(/Thou shalt not sudo!/));
 });
