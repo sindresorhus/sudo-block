@@ -1,3 +1,4 @@
+import process from 'node:process';
 import chalk from 'chalk';
 import isRoot from 'is-root';
 import isDocker from 'is-docker';

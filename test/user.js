@@ -1,4 +1,5 @@
-import fs from 'fs';
+import process from 'node:process';
+import fs from 'node:fs';
 import test from 'ava';
 import sinon from 'sinon';
 import importFresh from 'import-fresh';

@@ -6,8 +6,8 @@
 
 ## Install
 
-```
-$ npm install sudo-block
+```sh
+npm install sudo-block
 ```
 
 ## Usage
@@ -28,4 +28,4 @@ When a file containing this function is run with root permissions it will exit a
 
 Type: `string`
 
-Custom message.
+A custom message.

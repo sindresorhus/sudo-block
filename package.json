@@ -11,9 +11,12 @@
 		"url": "https://sindresorhus.com"
 	},
 	"type": "module",
-	"exports": "./index.js",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
 	"engines": {
-		"node": ">=12"
+		"node": ">=18"
 	},
 	"scripts": {
 		"//test": "xo && ava && tsd",
@@ -34,15 +37,15 @@
 		"stop"
 	],
 	"dependencies": {
-		"chalk": "^4.1.1",
-		"is-docker": "^2.2.1",
+		"chalk": "^5.3.0",
+		"is-docker": "^3.0.0",
 		"is-root": "^3.0.0"
 	},
 	"devDependencies": {
-		"ava": "^3.15.0",
+		"ava": "^5.3.1",
 		"import-fresh": "^3.3.0",
-		"sinon": "^10.0.0",
-		"tsd": "^0.14.0",
-		"xo": "^0.39.1"
+		"sinon": "^15.2.0",
+		"tsd": "^0.29.0",
+		"xo": "^0.56.0"
 	}
 }
